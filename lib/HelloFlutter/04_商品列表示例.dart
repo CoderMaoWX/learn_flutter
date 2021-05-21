@@ -55,28 +55,32 @@ class WXGoodsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 15),
-        Text(
-          title,
-          style: TextStyle(
-              fontSize: 16,
-              color: Colors.black
+    return Container(
+      child: Column(
+        children: [
+          SizedBox(height: 15),
+          Text(
+            title,
+            style: TextStyle(
+                fontSize: 16,
+                color: Colors.black
+            ),
           ),
-        ),
 
-        SizedBox(height: 15),
-        Text(
-          subTitle,
-          style: TextStyle(
-              fontSize: 14,
-              color: Colors.black87
+          SizedBox(height: 15),
+          Text(
+            subTitle,
+            style: TextStyle(
+                fontSize: 14,
+                color: Colors.black87
 
+            ),
           ),
-        ),
-        Image.network(imgURL)
-      ],
-    ),
+          Image.network(imgURL)
+        ],
+      ),
+    );
   }
 }
+
+
