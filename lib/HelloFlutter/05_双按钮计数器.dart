@@ -25,11 +25,14 @@ class WXHomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: WXHomePageBody(),
+      body: WXHomePageBody("你好啊,李银河"),
     );
   }
 }
 class WXHomePageBody extends StatefulWidget {
+  final String message;
+  WXHomePageBody(this.message);
+
   @override
   _WXHomePageBodyState createState() => _WXHomePageBodyState();
 }
@@ -53,7 +56,8 @@ class _WXHomePageBodyState extends State<WXHomePageBody> {
           Text("计数器操作: $count", style: TextStyle(
               fontSize: 25,
               color: Colors.blue
-          ),)
+          )),
+          Text("传递过来的信息: ${widget.message}")
         ],
       ),
     );
@@ -80,5 +84,3 @@ class _WXHomePageBodyState extends State<WXHomePageBody> {
         });
   }
 }
-
-

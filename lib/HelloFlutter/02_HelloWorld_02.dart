@@ -28,14 +28,18 @@ class HYHomePage extends StatelessWidget {
 class HYContentBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return _getMyCenterWidget;
+  }
+
+  Center get _getMyCenterWidget {
     return Center(
-      child: Text(
-        "Hello World",
-        style: TextStyle(
-            fontSize: 40,
-            color: Colors.orange
-        ),
+    child: Text(
+      "Hello World",
+      style: TextStyle(
+          fontSize: 40,
+          color: Colors.orange
       ),
-    );
+    ),
+  );
   }
 }

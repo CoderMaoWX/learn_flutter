@@ -1,6 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-main () => runApp(MyApp());
+main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -12,73 +13,41 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class WXHomePage extends StatelessWidget {
+class WXHomePage extends StatefulWidget {
+  @override
+  _WXHomePageState createState() => _WXHomePageState();
+}
+
+class _WXHomePageState extends State<WXHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "双按钮计数器",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.amberAccent
-          ),
+          "各种控件演练",
+          style: TextStyle(fontSize: 30, color: Colors.white),
         ),
       ),
-      body: WXHomePageBody(),
+      body: Column(
+        children: [
+          _testBuildText(),
+          Image(image: AssetImage("assets/images/computer.png"))
+        ],
+      ),
     );
   }
-}
- class WXHomePageBody extends StatefulWidget {
-   @override
-   _WXHomePageBodyState createState() => _WXHomePageBodyState();
- }
- 
- class _WXHomePageBodyState extends State<WXHomePageBody> {
-  var count = 0;
 
-   @override
-   Widget build(BuildContext context) {
-     return Center(
-       child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: [
-           Row(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: [
-               _getRaseButton(true),
-               _getRaseButton(false),
-             ],
-           ),
-           Text("计数器操作: $count", style: TextStyle(
-             fontSize: 25,
-             color: Colors.blue
-           ),)
-         ],
-       ),
-     );
-   }
-
-   RawMaterialButton _getRaseButton(bool isAdd) {
-    return RawMaterialButton(
-        fillColor: isAdd ? Colors.red : Colors.blue,
-        child: Text(
-          isAdd ? "+" : "-",
+  Text _testBuildText() {
+    return Text(
+          "《定风波》 苏轼 莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+          textAlign: TextAlign.center,
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,//一行显示不下就显示三个点
           style: TextStyle(
-            fontSize: 40,
-            color: Colors.white,
+            fontSize: 20,
+            color: Colors.red,
+            fontWeight: FontWeight.bold
           ),
-        ),
-        onPressed: () {
-          setState(() {
-            if (isAdd) {
-              count++;
-            } else {
-              count--;
-            }
-          });
-        });
+        );
   }
 }
- 
-
