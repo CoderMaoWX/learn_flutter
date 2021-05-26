@@ -7,7 +7,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: WXHomePage(),
     );
   }
@@ -23,6 +22,7 @@ class _WXHomePageState extends State<WXHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         title: Text(
           "各种控件演练",
           style: TextStyle(fontSize: 30, color: Colors.white),
@@ -49,5 +49,28 @@ class _WXHomePageState extends State<WXHomePage> {
             fontWeight: FontWeight.bold
           ),
         );
+=======
+        title: Text("基础Widget"),
+      ),
+      body: WXHomeContent(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => print("FloatingActionButton Click"),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class WXHomeContent extends StatefulWidget {
+  @override
+  _WXHomeContentState createState() => _WXHomeContentState();
+}
+
+class _WXHomeContentState extends State<WXHomeContent> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+>>>>>>> renamefileanme
   }
 }
