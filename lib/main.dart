@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/headfiles/global.dart';
 
 main() => runApp(MyApp());
 
@@ -36,41 +37,19 @@ class WXHomeContent extends StatefulWidget {
 class _WXHomeContentState extends State<WXHomeContent> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          //1.MaterialButton
-          MaterialButton(
-            color: Colors.red,
-            textColor: Colors.green,
-            onPressed: () {
-              print("点击了MaterialButton按钮");
-            },
-              child: Text(
-                "ZAFUL",
-                style: TextStyle(
-                  color: Colors.amber
-                ),
-              ),
-          ),
-
-          //2.TextButton
-          TextButton(
-            onPressed: (){
-              print("点击了TextButton按钮");
-            },
-            child: Icon(Icons.favorite, color: Colors.red,)
-          ),
-
-          //3.ElevatedButton
-          ElevatedButton(
-              onPressed: () {
-                print("点击了ElevatedButton按钮");
-              },
-              child: Image(
-                image: AssetImage("assets/images/down.png"),
-              ))
-        ],
+    return Container(
+      color: Colors.grey,
+      width: 500,
+      height: 500,
+      child: Image(
+        image: NetworkImage(GlobalClass.imageURL),
+        color: Colors.green,
+        colorBlendMode: BlendMode.colorDodge,
+        width: 100,
+        height: 100,
+        fit: BoxFit.contain,
+        repeat: ImageRepeat.noRepeat,
+          alignment: Alignment(0, 0),
       ),
     );
   }
