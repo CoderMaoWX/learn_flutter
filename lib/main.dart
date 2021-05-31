@@ -36,6 +36,33 @@ class WXHomeContent extends StatefulWidget {
 class _WXHomeContentState extends State<WXHomeContent> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Column(
+        children: [
+          //1.MaterialButton
+          MaterialButton(
+            color: Colors.red,
+            textColor: Colors.green,
+            onPressed: () {
+              print("点击了MaterialButton按钮");
+            },
+              child: Text(
+                "ZAFUL",
+                style: TextStyle(
+                  color: Colors.amber
+                ),
+              ),
+          ),
+
+          //2.TextButton
+          TextButton(
+            onPressed: (){
+              print("点击了TextButton按钮");
+            },
+            child: Icon(Icons.favorite)
+          )
+        ],
+      ),
+    );
   }
 }
