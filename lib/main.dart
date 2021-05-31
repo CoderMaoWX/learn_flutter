@@ -59,8 +59,17 @@ class _WXHomeContentState extends State<WXHomeContent> {
             onPressed: (){
               print("点击了TextButton按钮");
             },
-            child: Icon(Icons.favorite)
-          )
+            child: Icon(Icons.favorite, color: Colors.red,)
+          ),
+
+          //3.ElevatedButton
+          ElevatedButton(
+              onPressed: () {
+                print("点击了ElevatedButton按钮");
+              },
+              child: Image(
+                image: AssetImage("assets/images/down.png"),
+              ))
         ],
       ),
     );
