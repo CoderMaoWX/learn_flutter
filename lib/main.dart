@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/headfiles/global.dart';
 
 main() => runApp(MyApp());
 
@@ -37,10 +38,22 @@ class _WXHomeContentState extends State<WXHomeContent> {
   @override
   void initState() {
     super.initState();
+    getHomeData();
   }
+
+  void getHomeData() async {
+    final movieURL = "/getsdds";
+    final result = await HttpRequest.request(movieURL);
+    // final subjects = result["subjects"];
+    print("请求返回的数据: $result");
+}
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      width: 100,
+      height: 100,
+      // color: Colors.red,
+    );
   }
 }
