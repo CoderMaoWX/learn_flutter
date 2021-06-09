@@ -47,7 +47,7 @@ class _WXHomeContentState extends State<WXHomeContent> {
       print("请求返回的数据: $value");
     });
 
-}
+  }
 
   @override
   Widget build(BuildContext context) {
