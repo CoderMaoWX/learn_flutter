@@ -1,5 +1,6 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/headfiles/HttpRequest.dart';
+import 'package:learn_flutter/headfiles/global.dart';
 
 class DBHomePage extends StatelessWidget {
   String title = "";
@@ -22,6 +23,20 @@ class WXHomeContent extends StatefulWidget {
 }
 
 class _WXHomeContentState extends State<WXHomeContent> {
+
+  @override
+  void initState() {
+    super.initState();
+    getHomeData();
+  }
+
+  void getHomeData() {
+    final movieURL = "/movie/top250?start=0&count=${HomeConfig.movieCount}";
+    HttpRequest.request(movieURL).then((value) {
+      print("请求豆瓣主页返回数据: $value");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
