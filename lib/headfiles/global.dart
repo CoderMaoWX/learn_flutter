@@ -12,6 +12,7 @@ class HomeConfig {
 
 class HttpConfig {
   static const String baseURL = "http://httpbin.org";
-  static const String doubanBaseURL = "https://douban-app.uieee.com/v2";
+  //static const String doubanBaseURL = "https://douban-app.uieee.com/v2";
+  static const String doubanBaseURL = "http://luocheng.cn1.utools.club";
   static const int timeout = 5000;
 }
