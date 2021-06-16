@@ -16,7 +16,10 @@ class SubjectEntity {
   }
 }
 
+int counter = 1;
+
 class Subject {
+  int rank= 0;
   bool tag = false;
   Rating rating = Rating(0.5, 1);
   var genres;
@@ -37,6 +40,7 @@ class Subject {
 
   ///构造函数
   Subject.fromMap(Map<String, dynamic> map) {
+    rank = counter++;
     var rating = map['rating'];
     this.rating = Rating(rating['average'], rating['max']);
     genres = map['genres'];
